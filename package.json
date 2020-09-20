@@ -1,36 +1,49 @@
 {
-  "name": "curso-platzi-react-avanzado",
-  "version": "1.0.0",
-  "description": "Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --open",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/betotorodev/curso-platzi-react-avanzado"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
-  },
-  "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
-  "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+    "name": "curso-platzi-react-avanzado",
+    "version": "1.0.0",
+    "description": "Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)",
+    "main": "index.js",
+    "scripts": {
+        "vercel-build": "npm run build",
+        "lint": "standard",
+        "build": "webpack",
+        "dev": "webpack-dev-server --open",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/betotorodev/curso-platzi-react-avanzado"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
+    },
+    "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "html-webpack-plugin": "^3.2.0",
+        "standard": "^14.3.4",
+        "webpack": "^4.33.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    },
+    "dependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
+    },
+    "standard": {
+        "ignore": [
+            "/api/**"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "./node_modules/standard/eslintrc.json"
+        ]
+    }
 }
