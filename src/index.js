@@ -1,1 +1,4 @@
-console.log('Empezemos')
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(<h1>Admiro a midudev</h1>, document.getElementById('app'))
