@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { fadeIn } from '../../styles/animation'
 
 export const ImgWrapper = styled.div`
   position: relative;
@@ -10,6 +11,7 @@ export const ImgWrapper = styled.div`
 `
 
 export const Img = styled.img`
+  ${fadeIn()}
   position: absolute;
   top: 0;
   height: 100%;
