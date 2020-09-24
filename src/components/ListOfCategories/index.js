@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import { Category } from '../Category/index'
 
-import { List, Item } from './styles'
+import { List, Item, Loading } from './styles'
 
-export const ListOfCategories = () => {
+const useCategoriesData = () => {
   const [categories, setCategories] = useState([])
-  const [showFixed, setShowFixed] = useState(false)
+  const [ loading, setLoading ] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch('https://petgram-backend.betotorodev.vercel.app/categories')
       .then((response) => response.json())
-      .then(data => setCategories(data))
-  }, [])
+      .then(data => {
+        setCategories(data) 
+        setLoading(false)
+      })
+}, [])
+
+  return { categories, loading }
+}
+
+export const ListOfCategories = () => {
+  const { categories, loading } = useCategoriesData()
+  const [showFixed, setShowFixed] = useState(false)
+
 
   useEffect(() => {
     const onScroll = e => {
@@ -25,10 +37,14 @@ export const ListOfCategories = () => {
   }, [showFixed])
   
   const renderList = (fixed) => (
-    <List fixed={showFixed} className={fixed ? 'fixed' : ''}>
+    <List fade={showFixed} fixed={fixed}>
       {
-        categories.map(category =>
-          <Item key={category.id}><Category {...category}/></Item>
+        loading
+          ? <Loading></Loading>
+          : categories.map(category =>
+            <Item key={category.id}>
+              <Category {...category}/>
+            </Item>
         )
       }
     </List>
