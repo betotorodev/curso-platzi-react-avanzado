@@ -1,13 +1,13 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 
-import { withPhotos } from '../hoc/withPhotos'
+import { GET_PHOTOS } from '../querys/GET_PHOTOS'
 import { ListOfPhotoCardComponent } from '../components/ListOfPhotoCard/index'
 
 export const ListOfPhotoCards = ({ id }) => {
 
   return (
-    <Query query={withPhotos} variables={{id}}>
+    <Query query={GET_PHOTOS} variables={{id}}>
       {
         ({data = {}}) => {
           return <ListOfPhotoCardComponent {...data}/>
@@ -16,4 +16,3 @@ export const ListOfPhotoCards = ({ id }) => {
     </Query>
   )
 }
-

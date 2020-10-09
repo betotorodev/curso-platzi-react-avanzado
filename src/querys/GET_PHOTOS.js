@@ -1,7 +1,6 @@
-import { graphql } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
-export const withPhotos = gql`
+export const GET_PHOTOS = gql`
   query getPhotos($categoryId: ID) {
     photos(categoryId: $categoryId) {
       id
