@@ -2,7 +2,7 @@ import React from 'react'
 
 import { PhotoCard } from '../PhotoCard/index'
 
-export const ListOfPhotoCardComponent = ({ data: { photos = [] } }) => {
+export const ListOfPhotoCardComponent = ({ photos = [] }) => {
   return (
     <ul>
       {
