@@ -2,7 +2,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
+  },
+  devServer: {
+      historyApiFallback: {
+        disableDotRule: true
+    },
   },
   module: {
     rules: [
@@ -20,7 +26,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      favicon: './src/favicon.png'
     })
   ]
 }
