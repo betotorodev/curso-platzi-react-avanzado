@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 
 //components
 import { FavButton } from '../FavButton/index'
@@ -23,11 +24,11 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
       {
         show &&
         <>
-          <a href={`/?detail=${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImgWrapper>
               <Img loading="lazy" src={src} alt="pets photo"/>
             </ImgWrapper>
-          </a>
+          </Link>
           <ToggleLikeMutation>
             {
               (toggleLike) => {
