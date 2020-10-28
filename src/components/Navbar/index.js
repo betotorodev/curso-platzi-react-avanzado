@@ -8,7 +8,7 @@ export const Navbar = () => {
     <Nav>
       <Link to="/"><MdHome /></Link>
       <Link to='/favs'><MdFavoriteBorder /></Link>
-      <Link to='/users'><MdPersonOutline /></Link>
+      <Link to='/user'><MdPersonOutline /></Link>
     </Nav>
   )
 }
