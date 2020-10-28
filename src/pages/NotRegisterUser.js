@@ -5,6 +5,7 @@ import { UserForm } from '../components/UserForm/index'
 
 //utilities
 import Context from '../Context'
+import { RegisterMutation } from '../container/RegisterMutation'
 
 export const NotRegisterUser = () => {
   return (
@@ -12,7 +13,23 @@ export const NotRegisterUser = () => {
       {
         ({ activateAuth }) => {
           return (
-            <UserForm onSubmit={activateAuth}/>
+            <>
+              <RegisterMutation>
+                {
+                  (register) => {
+                    const onSubmit = ({ email, password }) => {
+                      const input = { email, password }
+                      const variables = { input }
+                      register({ variables })
+                        .then(activateAuth)
+                    }
+                    return <UserForm title='Registrarse' onSubmit={onSubmit}/>
+                  }
+                }
+              </RegisterMutation>
+              
+              <UserForm title='Iniciar Sesión' onSubmit={activateAuth}/>
+            </>
           )
         }
       }
