@@ -27,7 +27,6 @@ export const NotRegisterUser = () => {
                   }
                 }
               </RegisterMutation>
-              
               <UserForm title='Iniciar Sesión' onSubmit={activateAuth}/>
             </>
           )
